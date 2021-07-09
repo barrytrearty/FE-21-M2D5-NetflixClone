@@ -18,12 +18,22 @@ body {
 .net-nav li {
   display: inline-block;
   font-size: 0.8rem;
+  font-weight: 700;
   margin-left: 1rem;
 }
 
 .net-nav-list li {
   margin-left: 0.7rem;
 }
+
+/* @media (max-width: 991px) {
+  .nav-item {
+    margin-left: 2px;
+  }
+
+  .nav-link {
+    font-size: 0.6rem;
+    /* margin-left: 2px; */
 
 @media (min-width: 747px) {
   .net-nav-list li {
@@ -50,10 +60,12 @@ a:hover,
 h1 {
   /* font-size: larger; */
   font-size: 1.3rem;
+  font-weight: 600;
 }
 
 h2 {
   font-size: 1rem;
+  /* font-weight: bold; */
 }
 
 h3 {
@@ -61,10 +73,38 @@ h3 {
 }
 
 .genre-btn {
-  border: 1px solid rgba(247, 247, 247, 0.158);
+  border: 1px solid rgba(247, 247, 247, 0.664);
   font-size: 0.7rem;
   width: 4rem;
   text-align: left;
+}
+
+.chooseView {
+  display: inline-block;
+}
+
+.icon-style {
+  border: 0.1px solid rgba(247, 247, 247, 0.664);
+  display: inline-block;
+  width: 1.9rem;
+  height: 0.9rem;
+  /* margin-bottom: 2px;
+  float: right; */
+}
+
+.small-icon1,
+.small-icon2 {
+  position: relative;
+}
+
+.small-icon2 {
+  left: 8px;
+  bottom: 8px;
+}
+
+.small-icon1 {
+  left: 8px;
+  bottom: 8px;
 }
 
 .information-section {
