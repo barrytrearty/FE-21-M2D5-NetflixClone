@@ -129,3 +129,14 @@ h3 {
   padding: 3px;
   color: rgba(247, 247, 247, 0.158);
 }
+
+.img-fluid.w-100 {
+  border-radius: 3px;
+  position: relative;
+  transition: transform 0.3s ease-in;
+}
+
+.img-fluid.w-100:hover {
+  transform: scale(1.1);
+  z-index: 1;
+}
