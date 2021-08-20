@@ -102,21 +102,29 @@ h3 {
   margin: auto;
 }
 
-.sm-icon {
-  margin-right: 10px;
+.icon-section{
   margin-bottom: 10px;
+}
+
+.icon-section i {
+  margin-right: 10px;
 }
 
 .list {
   vertical-align: top;
   display: inline-block;
-  padding: 0;
+
   font-size: 0.6rem;
-  list-style: none;
+  /* list-style: none; */
+}
+
+.list ul{
+padding:0;
 }
 
 .list li {
-  padding: 2px;
+  padding-bottom: 4px;
+  
   list-style: none;
   color: rgba(247, 247, 247, 0.158);
 }
@@ -149,3 +157,8 @@ a.nav-link {
   font-size: 0.8rem;
   font-weight: 700;
 }
+
+.validated textarea:required:invalid, .validated input:required:invalid {
+border-color: red;
+background-color: pink;
+        }

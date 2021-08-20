@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Netflix Landing Page</title>
+    
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
@@ -16,6 +17,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="netflix.css" />
+    
     <!-- <link rel="stylesheet" href="style.css" /> -->
   </head>
   <body>
@@ -97,9 +99,9 @@
         </div>
       </nav>
     </div>
-    <div class="container">
-      <div id="for-alerts"></div>
 
+    <div class="container">
+  
       <form onsubmit="submitMovie(event)">
         <!-- <form> -->
         <div class="form-group">
@@ -129,9 +131,9 @@
         </div>
 
         <div class="d-flex justify-content-between">
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary" onclick="validateForm()">Submit</button>
 
-          <button onclick="deleteMovie()" class="btn btn-danger d-none">
+            <button onclick="deleteMovie()" class="btn btn-danger d-none">
             Delete
           </button>
         </div>
@@ -150,7 +152,7 @@
 
     <script>
       const movieId = new URLSearchParams(window.location.search).get("id");
-      const forAlerts = document.getElementById("for-alerts");
+      
       console.log(movieId);
 
       const url = movieId
@@ -207,23 +209,26 @@
             },
           });
           const sentData = await response.json();
-          forAlerts.innerHTML = `
-            <div class="alert alert-success" role="alert">
-                Movie successfully updated
-            </div>`;
+          // forAlerts.innerHTML = `
+          //   <div class="alert alert-success" role="alert">
+          //       Movie successfully updated
+          //   </div>`;
           document.getElementById("name").value = "";
           document.getElementById("description").value = "";
           document.getElementById("category").value = "";
           document.getElementById("image-url").value = "";
 
           console.log(sentData);
+          window.location.assign("index.html?action=updated");
         } catch (err) {
           console.log(err);
           //   alert(err);
+         
         }
       };
 
       const deleteMovie = async function () {
+        event.preventDefault();
         try {
           const response = await fetch(url, {
             method: "DELETE",
@@ -234,9 +239,15 @@
             },
           });
           const movieToBeDeleted = await response.json();
-          window.location.assign("index.html");
+          window.location.assign("index.html?action=deleted");
         } catch (err) {}
       };
+
+
+      const validateForm = () => {
+            const form = document.querySelector("form")
+            form.classList.add("validated")
+        }
     </script>
   </body>
 </html>
